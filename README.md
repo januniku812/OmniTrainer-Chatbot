@@ -26,10 +26,14 @@ Architecture:
 6. A convenience executable that starts the 3 services: the backend (fastAPI APIs), the frontend (the gradio app) as well as 
    Arize Phoenix for tracing.
 
-## How to work on the project
+## How to run the project
 # Setup
 
-Download project files from this GitHub repository and make sure you have a terminal open in the starter kit folder (navigated to project/starter as the root directory).
+Download project files from this GitHub repository and make sure you have a terminal open in the starter kit folder (navigated to project/starter as the root directory). Run the following command in project terminal to install all necessary libraries:
+
+```bash
+pip install -r requirements.txt
+```
 
 ## Create virtual environment and install dependencies
 
@@ -62,7 +66,7 @@ for example `my-api-key`.
 
 
 ## Running the Project 
-Download project files and navigate to project/starter directory as root. You can run it by executing in the terminal:
+Ensure you are navigated to project/starter as the root directory and run the project by executing the following in the terminal:
 
 ```bash
 uv run multimodal-moderation
