@@ -1,0 +1,95 @@
+<html><body style='background-color: #ffffff; color: #030000; padding: 20px;'><pre style='font-family: monospace;'>                                                                          Evaluation Summary: run_image_moderation                                                                           
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┓
+┃ Case ID                  ┃ Inputs                                                             ┃ Outputs                                                           ┃ Assertions ┃ Duration ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━┩
+│ professional_image_run_1 │ [ImageInput(image_file='/voc/work/code/project/starter/evals/test_ │ rationale='The image is professional and suitable for a customer  │ ✔✔✔✔       │     2.8s │
+│                          │ data/professional_image.jpg')]                                     │ service setting. It is clear, well-lit, and does not contain any  │            │          │
+│                          │                                                                    │ disturbing elements or personally identifiable information.'      │            │          │
+│                          │                                                                    │ contains_pii=False is_disturbing=False is_low_quality=False       │            │          │
+│                          │                                                                    │ is_flagged=False                                                  │            │          │
+├──────────────────────────┼────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────┼────────────┼──────────┤
+│ professional_image_run_2 │ [ImageInput(image_file='/voc/work/code/project/starter/evals/test_ │ rationale='The image is professional and suitable for customer    │ ✔✔✔✔       │     2.7s │
+│                          │ data/professional_image.jpg')]                                     │ service. It clearly depicts an ACME Power Widget Pro, a laptop,   │            │          │
+│                          │                                                                    │ headphones, and a smartphone, all connected by charging cables.   │            │          │
+│                          │                                                                    │ The image is well-lit, in focus, and free of any disturbing       │            │          │
+│                          │                                                                    │ content or personally identifiable information.'                  │            │          │
+│                          │                                                                    │ contains_pii=False is_disturbing=False is_low_quality=False       │            │          │
+│                          │                                                                    │ is_flagged=False                                                  │            │          │
+├──────────────────────────┼────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────┼────────────┼──────────┤
+│ professional_image_run_3 │ [ImageInput(image_file='/voc/work/code/project/starter/evals/test_ │ rationale='The image is of high quality, not disturbing, and does │ ✔✔✔✔       │     2.7s │
+│                          │ data/professional_image.jpg')]                                     │ not contain any PII. It is suitable for a professional customer   │            │          │
+│                          │                                                                    │ service setting.' contains_pii=False is_disturbing=False          │            │          │
+│                          │                                                                    │ is_low_quality=False is_flagged=False                             │            │          │
+├──────────────────────────┼────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────┼────────────┼──────────┤
+│ professional_image_run_4 │ [ImageInput(image_file='/voc/work/code/project/starter/evals/test_ │ rationale='The image is a product shot of a power bank and its    │ ✔✔✔✔       │     2.7s │
+│                          │ data/professional_image.jpg')]                                     │ accessories. It does not contain any disturbing elements, PII, or │            │          │
+│                          │                                                                    │ low-quality features. The image is suitable for a professional    │            │          │
+│                          │                                                                    │ customer service setting.' contains_pii=False is_disturbing=False │            │          │
+│                          │                                                                    │ is_low_quality=False is_flagged=False                             │            │          │
+├──────────────────────────┼────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────┼────────────┼──────────┤
+│ professional_image_run_5 │ [ImageInput(image_file='/voc/work/code/project/starter/evals/test_ │ rationale='The image is professional and suitable for customer    │ ✔✔✔✔       │     2.5s │
+│                          │ data/professional_image.jpg')]                                     │ service. It is clear, well-lit, and does not contain any          │            │          │
+│                          │                                                                    │ disturbing elements or personally identifiable information (PII). │            │          │
+│                          │                                                                    │ The image showcases a product and its accessories in a clean and  │            │          │
+│                          │                                                                    │ organized manner, which aligns with a professional presentation.' │            │          │
+│                          │                                                                    │ contains_pii=False is_disturbing=False is_low_quality=False       │            │          │
+│                          │                                                                    │ is_flagged=False                                                  │            │          │
+├──────────────────────────┼────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────┼────────────┼──────────┤
+│ image_with_person_run_1  │ [ImageInput(image_file='/voc/work/code/project/starter/evals/test_ │ rationale='The image contains a person, which is not appropriate  │ ✔✔✔✔       │     2.6s │
+│                          │ data/image_with_person.jpg')]                                      │ for a professional customer service setting as it may reveal      │            │          │
+│                          │                                                                    │ personally identifiable information.' contains_pii=True           │            │          │
+│                          │                                                                    │ is_disturbing=False is_low_quality=False is_flagged=True          │            │          │
+├──────────────────────────┼────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────┼────────────┼──────────┤
+│ image_with_person_run_2  │ [ImageInput(image_file='/voc/work/code/project/starter/evals/test_ │ rationale='The image is appropriate for a professional customer   │ ✔✔✔✔       │     2.5s │
+│                          │ data/image_with_person.jpg')]                                      │ service setting. It shows a person using a power bank with their  │            │          │
+│                          │                                                                    │ electronic devices. The image quality is good, and it does not    │            │          │
+│                          │                                                                    │ contain any disturbing elements or PII.' contains_pii=True        │            │          │
+│                          │                                                                    │ is_disturbing=False is_low_quality=False is_flagged=True          │            │          │
+├──────────────────────────┼────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────┼────────────┼──────────┤
+│ image_with_person_run_3  │ [ImageInput(image_file='/voc/work/code/project/starter/evals/test_ │ rationale='The image is appropriate for a professional customer   │ ✔✗✔✔       │     2.7s │
+│                          │ data/image_with_person.jpg')]                                      │ service setting. It is clear, well-lit, and does not contain any  │            │          │
+│                          │                                                                    │ disturbing elements. It shows a person, but no personally         │            │          │
+│                          │                                                                    │ identifiable information is revealed. The image is of good        │            │          │
+│                          │                                                                    │ quality.' contains_pii=True is_disturbing=False                   │            │          │
+│                          │                                                                    │ is_low_quality=False is_flagged=True                              │            │          │
+├──────────────────────────┼────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────┼────────────┼──────────┤
+│ image_with_person_run_4  │ [ImageInput(image_file='/voc/work/code/project/starter/evals/test_ │ rationale='The image contains a person, which is considered       │ ✔✔✔✔       │     2.1s │
+│                          │ data/image_with_person.jpg')]                                      │ Personally Identifiable Information (PII). Therefore, it is not   │            │          │
+│                          │                                                                    │ appropriate for a professional customer service setting.'         │            │          │
+│                          │                                                                    │ contains_pii=True is_disturbing=False is_low_quality=False        │            │          │
+│                          │                                                                    │ is_flagged=True                                                   │            │          │
+├──────────────────────────┼────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────┼────────────┼──────────┤
+│ image_with_person_run_5  │ [ImageInput(image_file='/voc/work/code/project/starter/evals/test_ │ rationale='The image contains a person, which is not appropriate  │ ✔✔✔✔       │     2.2s │
+│                          │ data/image_with_person.jpg')]                                      │ for a professional customer service setting as it may reveal      │            │          │
+│                          │                                                                    │ personally-identifiable information.' contains_pii=True           │            │          │
+│                          │                                                                    │ is_disturbing=False is_low_quality=False is_flagged=True          │            │          │
+├──────────────────────────┼────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────┼────────────┼──────────┤
+│ low_quality_image_run_1  │ [ImageInput(image_file='/voc/work/code/project/starter/evals/test_ │ rationale='The image contains a hand, which is considered         │ ✔✔✔✔       │     2.8s │
+│                          │ data/low_quality_image.jpg')]                                      │ personally-identifiable information (PII). The image is also      │            │          │
+│                          │                                                                    │ slightly blurry and has some artifacts, which could be considered │            │          │
+│                          │                                                                    │ low quality.' contains_pii=True is_disturbing=False               │            │          │
+│                          │                                                                    │ is_low_quality=True is_flagged=True                               │            │          │
+├──────────────────────────┼────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────┼────────────┼──────────┤
+│ low_quality_image_run_2  │ [ImageInput(image_file='/voc/work/code/project/starter/evals/test_ │ rationale='The image contains a hand, which is considered         │ ✔✔✔✔       │     2.3s │
+│                          │ data/low_quality_image.jpg')]                                      │ personally-identifiable information (PII). The image is also      │            │          │
+│                          │                                                                    │ slightly blurry, which could be improved for a professional       │            │          │
+│                          │                                                                    │ setting.' contains_pii=True is_disturbing=False                   │            │          │
+│                          │                                                                    │ is_low_quality=True is_flagged=True                               │            │          │
+├──────────────────────────┼────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────┼────────────┼──────────┤
+│ low_quality_image_run_3  │ [ImageInput(image_file='/voc/work/code/project/starter/evals/test_ │ rationale='The image contains a hand, which is considered PII.    │ ✔✔✔✔       │     2.4s │
+│                          │ data/low_quality_image.jpg')]                                      │ The image is also blurry and has dust or scratches on it,         │            │          │
+│                          │                                                                    │ indicating low quality.' contains_pii=True is_disturbing=False    │            │          │
+│                          │                                                                    │ is_low_quality=True is_flagged=True                               │            │          │
+├──────────────────────────┼────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────┼────────────┼──────────┤
+│ low_quality_image_run_4  │ [ImageInput(image_file='/voc/work/code/project/starter/evals/test_ │ rationale='The image contains a hand, which is considered PII.    │ ✔✔✔✔       │     2.1s │
+│                          │ data/low_quality_image.jpg')]                                      │ The image is also slightly blurry.' contains_pii=True             │            │          │
+│                          │                                                                    │ is_disturbing=False is_low_quality=True is_flagged=True           │            │          │
+├──────────────────────────┼────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────┼────────────┼──────────┤
+│ low_quality_image_run_5  │ [ImageInput(image_file='/voc/work/code/project/starter/evals/test_ │ rationale='The image contains a hand, which is considered PII.    │ ✔✔✔✔       │     2.3s │
+│                          │ data/low_quality_image.jpg')]                                      │ The image is also slightly blurry and could be improved.'         │            │          │
+│                          │                                                                    │ contains_pii=True is_disturbing=False is_low_quality=True         │            │          │
+│                          │                                                                    │ is_flagged=True                                                   │            │          │
+├──────────────────────────┼────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────┼────────────┼──────────┤
+│ Averages                 │                                                                    │                                                                   │ 98.3% ✔    │     2.5s │
+└──────────────────────────┴────────────────────────────────────────────────────────────────────┴───────────────────────────────────────────────────────────────────┴────────────┴──────────┘
+</pre></body></html>
