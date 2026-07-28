@@ -68,70 +68,9 @@ cp env.example .env
 then open .env and fill your API credential in GEMINI_API_KEY, as well as make up a USER_API_KEY (anything works). You can use
 for example `my-api-key`.
 
-**NOTE**: this is obviously not secure, but it is here to remind you that a real production app will need to have some authentication
-measure!
 
-# Execution
-
-Follow the following steps in order:
-
-## 1. Moderation result
-Here we setup the Pydantic models for our moderation agents. These are the output schemas for the text, audio, image and video moderation agents we'll work on later. 
-
-1. Edit the `types/moderation_result.py` file and replace the `# TODO` sections with your code
-2. Run the test to get feedback on your work. From the root of the starter run: `uv run tests/test_moderation_result.py -vv`. 
-   If you get an error, read it carefully as it will give you information on what to fix.
-   **DO NOT** continue unless the test passes.
-
-## 2. Text agent
-Here we will complete the setup of the moderation agent for text. 
-
-1. Edit the text agent (`agents/text_agent.py`) and replace the `# TODO` sections
-2. Run the test to get feedback on your work. From the root of the starter run: `uv run tests/test_text_agent.py -vv`. If you get an 
-    error, read it carefully as it will give you information on what to fix.
-    **DO NOT** continue unless the test passes.
-
-## 3. Image agent
-Here we will complete the setup of the moderation agent for images, similarly to what we just did for text. Since this is a multimodal agent, we will use the multimodal capabilities of Pydantic AI and Gemini.
-
-1. Edit the image agent (`agents/image_agent.py`) and replace the `# TODO` sections
-2. Run the test to get feedback on your work. From the root of the starter run: `uv run tests/test_image_agent.py -vv`. If you get an 
-    error, read it carefully as it will give you information on what to fix.
-    **DO NOT** continue unless the test passes.
-
-## 4. Video and Audio agents
-The audio and video agents are already completed. You will just test them to make sure they work.
-
-The Video and Audio agents are already complete. You can test them with `uv run tests/test_video_agent.py` and `uv run tests/test_audio_agent.py`.
-
-## 5. Gradio App
-Here we put everything together into a Gradio app, which constitutes the front-end of our solution.
-
-1. Edit the gradio app (`gradio_app.py`) and replace all `# TODO` sections. There are quite a few, going from the top to the bottom. Before moving on, make sure you did not left any by searching `TODO` in the file (Crtl+F or Command+F).
-2. Run the test to get feedback on your work. From the root of the starter run: `uv run tests/test_gradio_app.py -vv`. If you get an 
-    error, read it carefully as it will give you information on what to fix.
-    **DO NOT** continue unless the test passes.
-
-## 6. Run all tests
-
-It is now time to verify your work. Run all tests at once with:
-```bash
-uv run pytest tests/ -vv
-```
-All tests should pass. If they don't, fix them before submitting your project.
-
-## 7. Evals
-Now that our system is complete, we need to run evaluations to understand and measure how it behaves. 
-
-1. Edit the `evals/text/test_cases.py` and replace all `# TODO` sections. Same for `evals/image/test_cases.py`.
-2. Once you are done, run `uv run evals/text/test_cases.py` to see the results of the evals on text. 
-   NOTE: your score will NOT always be 100%! that is not a bug. The text agent is not perfect!
-3. Run the evals for the other media (`uv run evals/image/test_cases.py`, `uv run evals/audio/test_cases.py` and `uv run evals/video/test_cases.py`)
-
-# Play with the app
-
-## Conversation
-Now that you are done, the app should work. You can run it by executing in the terminal:
+## Running the Project 
+Download project files and navigate to project/starter directory as root. You can run it by executing in the terminal:
 
 ```bash
 uv run multimodal-moderation
