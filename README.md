@@ -33,7 +33,7 @@ communications following company standards.
 7. A convenience executable that starts the 3 services: the backend (fastAPI APIs), the frontend (the gradio app) as well as 
    Arize Phoenix for tracing.
 
-# How to run the project
+# How to run (and/or edit) the project
 ## Setup
 
 Download project files from this GitHub repository and make sure you have a terminal open in the starter kit folder (navigated to project/starter as the root directory). Run the following command in project terminal to install all necessary libraries:
