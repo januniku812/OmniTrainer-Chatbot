@@ -27,17 +27,9 @@ Architecture:
    Arize Phoenix for tracing.
 
 ## How to work on the project
-
-The scaffolding is provided to you. You will complete key parts of the code, applying what you have learned, following a precise sequence of steps described below.
-
-Every step needs to be executed in order. You can self-verify that the step has been completed successfully by executing the tests
-that we will indicate (already provided to you).
-
-*DO NOT* skip steps and do not proceed if the tests are not passing, as the next steps build on the previous one.
-
 # Setup
 
-Make sure you have a terminal open in the starter kit folder.
+Download project files from this GitHub repository and make sure you have a terminal open in the starter kit folder (navigated to project/starter as the root directory).
 
 ## Create virtual environment and install dependencies
 
